@@ -1,0 +1,12 @@
+Chronos - Open Source Appointment Management System
+Copyright 2025 Paulo-Possatto and Chronos Contributors
+
+This product is designed to work with third-party services:
+
+- Keycloak Identity and Access Management
+  (Apache License 2.0 - https://www.keycloak.org/)
+
+- PostgreSQL Database
+  (PostgreSQL License - https://www.postgresql.org/)
+  
+Users must obtain and configure these services separately.

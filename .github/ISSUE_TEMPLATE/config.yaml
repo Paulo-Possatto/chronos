@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Chronos documentation
+    url: https://github.com/Paulo-Possatto/chronos#readme
+    about: Please check the documentation before creating an issue
+  - name: GitHub discussions
+    url: https://github.com/Paulo-Possatto/chronos/discussions
+    about: For general questions and discussions, please use Discussions
+  - name: Report security vulnerability
+    url: https://github.com/Paulo-Possatto/chronos/security/policy
+    about: Please report security vulnerabilities via GitHub Security

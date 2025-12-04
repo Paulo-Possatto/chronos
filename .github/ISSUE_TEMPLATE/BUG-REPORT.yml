@@ -1,0 +1,87 @@
+name: "Bug Report"
+description: "Report a problem or unexpected behaviour"
+title: "[BUG]: <title>"
+labels: [
+  "bug"
+]
+assignees: ""
+body:
+  - type: textarea
+    id: description
+    attributes: 
+      label: "Bug Description"
+      description: "Please describe exactly what happened"
+      placeholder: "Short and explicit description of your incident..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: reprod
+    attributes:
+      label: "How to reproduce"
+      description: "Please describe your steps to this error"
+      value: |
+        1. Go to '...'
+        2. Click on '....'
+        3. Scroll down to '....'
+        4. See error
+      render: bash
+    validations:
+      required: true
+
+  - type: textarea
+    id: behaviour
+    attributes: 
+      label: "Expected behaviour"
+      description: "What was the expected behaviour without the error?"
+      placeholder: "It was expected that this would return X..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidences
+    attributes:
+      label: "Evidences"
+      description: "If applicable, please add screenshots or short videos"
+      value: |
+        ![DESCRIPTION](LINK.png)
+      render: bash
+    validations:
+      required: false
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: "Logs"
+      description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
+      render: bash
+    validations:
+      required: false
+
+  - type: dropdown
+    id: browsers
+    attributes:
+      label: "Browsers"
+      description: What browsers are you seeing the problem on ?
+      multiple: true
+      options:
+        - Firefox
+        - Chrome
+        - Safari
+        - Microsoft Edge
+        - Opera
+    validations:
+      required: false
+      
+  - type: dropdown
+    id: os
+    attributes:
+      label: "OS"
+      description: What is the impacted environment ?
+      multiple: true
+      options:
+        - Windows
+        - Linux
+        - Mac
+    validations:
+      required: false

@@ -1,0 +1,68 @@
+name: "Question"
+description: "Question about the project or how to use it"
+title: "[QUESTION]: <title>"
+labels: ["question"]
+body:
+  - type: markdown
+    attributes:
+      value: "## Question"
+      
+  - type: textarea
+    id: question
+    attributes:
+      label: "Your question"
+      description: "Ask your question clearly and detailed"
+      placeholder: "Describe your question in detail..."
+    validations:
+      required: true
+      
+  - type: textarea
+    id: tried
+    attributes:
+      label: "What have you tried?"
+      description: "Describe your attempts to resolve / understand"
+      placeholder: "What steps have you already taken to solve this?"
+      
+  - type: textarea
+    id: documentation
+    attributes:
+      label: "Documentation consulted"
+      description: "Which parts of the documentation have you already read?"
+      placeholder: "List documentation pages, tutorials, or examples you've reviewed..."
+      
+  - type: textarea
+    id: context
+    attributes:
+      label: "Context"
+      description: "Why do you need to know this? What is your use case?"
+      placeholder: "Explain why you need this information and how you plan to use it..."
+      
+  - type: markdown
+    attributes:
+      value: "## Environment"
+      
+  - type: input
+    id: chronos_version
+    attributes:
+      label: "Chronos version"
+      placeholder: "e.g., 1.0.0, 2.3.1, latest"
+    validations:
+      required: false
+      
+  - type: input
+    id: os
+    attributes:
+      label: "OS"
+      placeholder: "e.g., Ubuntu 22.04, Windows 11, macOS 14.0"
+    validations:
+      required: false
+      
+  - type: textarea
+    id: other_info
+    attributes:
+      label: "Other relevant information"
+      description: "Any other details about your environment or setup"
+      placeholder: "Browser version, dependencies, configuration, etc..."
+      render: text
+    validations:
+      required: false

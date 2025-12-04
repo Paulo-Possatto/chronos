@@ -1,0 +1,109 @@
+name: "Feature request"
+description: "Suggest ideas or enhancements to the project"
+title: "[FEATURE]: <title>"
+labels: ["enhancement"]
+assignees: ""
+
+body:
+  - type: markdown
+    attributes:
+      value: "## Feature Request"
+      
+  - type: textarea
+    id: problem
+    attributes:
+      label: "This feature is related to some problem?"
+      description: 'Eg: "I get frustrated when..." or "No" if it does not'
+      placeholder: "Describe the problem or context..."
+    validations:
+      required: true
+      
+  - type: textarea
+    id: desired_solution
+    attributes:
+      label: "Desired solution"
+      description: "Describe what you want to happen"
+      placeholder: "Describe the ideal solution..."
+    validations:
+      required: true
+      
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: "Considered alternatives"
+      description: "Describe alternative solutions that you considered"
+      placeholder: "List any alternatives you've considered..."
+      
+  - type: textarea
+    id: value
+    attributes:
+      label: "Feature value"
+      description: "How can this feature add value to the project?"
+      placeholder: "Explain the value this feature would bring..."
+    validations:
+      required: true
+      
+  - type: textarea
+    id: mockups
+    attributes:
+      label: "Mockups / Examples"
+      description: "If possible, add mockups or examples here"
+      placeholder: "Add links to mockups, screenshots, or examples..."
+      
+  - type: checkboxes
+    id: technical_impact
+    attributes:
+      label: "Technical impact"
+      description: "Select all that apply"
+      options:
+        - label: "Require API changes"
+        - label: "Require database migration"
+        - label: "Affects performance"
+        - label: "Add new dependencies"
+        - label: "Other"
+
+  - type: input
+    id: technical_impact_specify
+    attributes:
+      label: "If you selected 'Other', please specify:"
+    validations:
+      required: false
+        
+  - type: checkboxes
+    id: user_type
+    attributes:
+      label: "User type"
+      description: "Select all that apply"
+      options:
+        - label: "Admin"
+        - label: "End user"
+        - label: "Developer"
+        - label: "Other"
+
+  - type: input
+    id: user_type_specify
+    attributes:
+      label: "If you selected 'Other', please specify:"
+    validations:
+      required: false
+        
+  - type: checkboxes
+    id: category
+    attributes:
+      label: "Category"
+      description: "Select all that apply"
+      options:
+        - label: "Authentication / Keycloak"
+        - label: "Scheduling / Calendar"
+        - label: "UX / UI"
+        - label: "Performance"
+        - label: "Security"
+        - label: "Documentation"
+        - label: "Other"
+
+  - type: input
+    id: category_specify
+    attributes:
+      label: "If you selected 'Other', please specify:"
+    validations:
+      required: false

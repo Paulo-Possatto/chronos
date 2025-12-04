@@ -1,14 +1,12 @@
 name: "Bug Report"
 description: "Report a problem or unexpected behaviour"
 title: "[BUG]: <title>"
-labels: [
-  "bug"
-]
+labels: ["bug"]
 assignees: ""
 body:
   - type: textarea
     id: description
-    attributes: 
+    attributes:
       label: "Bug Description"
       description: "Please describe exactly what happened"
       placeholder: "Short and explicit description of your incident..."

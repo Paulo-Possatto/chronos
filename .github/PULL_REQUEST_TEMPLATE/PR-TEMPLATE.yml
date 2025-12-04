@@ -1,0 +1,79 @@
+name: "Pull Request Template"
+description: "Default template for PRs"
+title: "[<type>]: <title>"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for your contribution! Please, fill this template.
+
+  - type: dropdown
+    id: type-pr
+    attributes:
+      label: "Type of change"
+      description: "Select the type of change"
+      options:
+        - "Bugfix"
+        - "New implementation"
+        - "Refactor"
+        - "Documentation"
+        - "Performance"
+        - "Tests"
+        - "Configuration"
+    validations:
+      required: true
+
+  - type: input
+    id: issue
+    attributes:
+      label: "Related issue"
+      description: "Link to the issue (if appliable)"
+      placeholder: "eg: #123"
+    validations:
+      required: false
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "Description"
+      description: "Describe the changes made"
+      placeholder: |
+        ## What was changed?
+        - Item 1
+        - Item 2
+        
+        ## Why this change was needed?
+    validations:
+      required: true
+
+  - type: textarea
+    id: tests
+    attributes:
+      label: "Test files"
+      description: "Add the filename of the tests created / modified"
+      placeholder: | 
+        1. TestClassOne.java
+        2. TestClassTwo.java
+    validations:
+      required: true
+
+  - type: textarea
+    id: checklist
+    attributes:
+      label: "Checklist"
+      description: "Check the items below"
+      value: |
+        - [ ] My code follows the project's style guidelines
+        - [ ] I executed the tests locally
+        - [ ] I have added tests that prove my correction / functionality
+        - [ ] I updated the documentation (if necessary)
+        - [ ] Commits follow the conventional pattern
+    validations:
+      required: true
+
+  - type: textarea
+    id: observations
+    attributes:
+      label: "Additional observations"
+      description: "Links, comments or any additional information"
+      placeholder: "Screenshots, reference links, etc."

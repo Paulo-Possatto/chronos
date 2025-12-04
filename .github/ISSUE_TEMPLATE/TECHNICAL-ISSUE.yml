@@ -1,0 +1,111 @@
+name: "Technical Issue"
+description: "Issues related to development, build, or CI/CD"
+title: "[TECH]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: "## Technical Issue"
+      
+  - type: textarea
+    id: description
+    attributes:
+      label: "Description about the technical issue"
+      description: "Describe what is the issue you're having"
+      placeholder: "Describe the technical problem in detail..."
+    validations:
+      required: true
+      
+  - type: markdown
+    attributes:
+      value: "## Development environment"
+      
+  - type: input
+    id: os
+    attributes:
+      label: "OS"
+      placeholder: "e.g., Linux Mint 21.3, Ubuntu 22.04, Windows 11"
+    validations:
+      required: true
+      
+  - type: input
+    id: java_version
+    attributes:
+      label: "Java Version"
+      placeholder: "e.g., OpenJDK 21.0.9, Oracle JDK 17.0.11"
+    validations:
+      required: true
+      
+  - type: input
+    id: docker_version
+    attributes:
+      label: "Docker Version"
+      placeholder: "e.g., 29.1.2, 27.3.1, Not applicable"
+    validations:
+      required: false
+      
+  - type: textarea
+    id: commands
+    attributes:
+      label: "Executed commands"
+      description: "Paste here the commands you executed"
+      placeholder: "`Paste commands here"
+      render: shell
+    validations:
+      required: false
+      
+  - type: textarea
+    id: expected
+    attributes:
+      label: "Expected behaviour"
+      description: "What should happen?"
+      placeholder: "Describe what you expected to happen..."
+    validations:
+      required: true
+      
+  - type: textarea
+    id: actual
+    attributes:
+      label: "Actual behaviour"
+      description: "What actually happened?"
+      placeholder: "Describe what actually happened instead..."
+    validations:
+      required: true
+      
+  - type: textarea
+    id: logs
+    attributes:
+      label: "Error logs"
+      description: "Paste here the error logs"
+      placeholder: "Paste error logs here"
+      render: shell
+    validations:
+      required: false
+      
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: "Affected dependencies"
+      description: "Any specific dependency was involved?"
+      placeholder: "List any dependencies that might be related to the issue..."
+    validations:
+      required: false
+      
+  - type: checkboxes
+    id: attempts
+    attributes:
+      label: "Solution attempts"
+      description: "Select all that you have tried"
+      options:
+        - label: "./mvnw clean install"
+        - label: "docker system prune"
+        - label: "Dependency reinstallation"
+        - label: "Other (specify below)"
+        
+  - type: textarea
+    id: other_attempts
+    attributes:
+      label: "If you selected 'Other', describe your solution attempts:"
+      placeholder: "Describe any other troubleshooting steps you've taken..."
+    validations:
+      required: false

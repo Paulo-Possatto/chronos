@@ -1,0 +1,64 @@
+name: "Documentation"
+description: "Report problems or suggest enhancements to the documentation"
+title: "[DOCS]: <title>"
+labels: ["documentation"]
+body:
+  - type: markdown
+    attributes:
+      value: "## Documentation Issue"
+      
+  - type: input
+    id: location
+    attributes:
+      label: "Where is the problem?"
+      description: "Please specify the URL, file or section that requires attention"
+      placeholder: "e.g., https://docs.example.com/page, README.md, Section 3.2"
+    validations:
+      required: true
+      
+  - type: textarea
+    id: problem_description
+    attributes:
+      label: "Problem description"
+      description: "What is wrong or missing?"
+      placeholder: "Describe the problem or what is missing..."
+    validations:
+      required: true
+      
+  - type: textarea
+    id: enhancement_suggestion
+    attributes:
+      label: "Enhancement suggestion"
+      description: "How it should be?"
+      placeholder: "Describe how you think it should be corrected or improved..."
+    validations:
+      required: false
+      
+  - type: textarea
+    id: related_links
+    attributes:
+      label: "Related links"
+      description: "Links to the actual documentation"
+      placeholder: "Add relevant links to documentation pages, files, or sections..."
+      render: text
+    validations:
+      required: false
+      
+  - type: checkboxes
+    id: type
+    attributes:
+      label: "Type"
+      description: "Select all that apply"
+      options:
+        - label: "Information error"
+        - label: "Missing content"
+        - label: "Bad / Missing example"
+        - label: "Translation problem"
+        - label: "Other (specify below)"
+        
+  - type: input
+    id: type_specify
+    attributes:
+      label: "If you selected 'Other', please specify:"
+    validations:
+      required: false

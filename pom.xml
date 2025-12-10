@@ -54,6 +54,9 @@
         <common-compress.version>1.28.0</common-compress.version>
         <cyclone-dx.version>2.9.1</cyclone-dx.version>
         <springdoc.version>2.8.14</springdoc.version>
+        <checkstyle-plugin.version>3.5.0</checkstyle-plugin.version>
+        <spotbugs-plugin.version>4.9.8.2</spotbugs-plugin.version>
+        <owasp-plugin.version>12.1.9</owasp-plugin.version>
 
         <jacoco.coverage.bundle.minimum>0.85</jacoco.coverage.bundle.minimum>
         <jacoco.coverage.class.minimum>0.65</jacoco.coverage.class.minimum>
@@ -354,6 +357,39 @@
                 <artifactId>sonar-maven-plugin</artifactId>
                 <version>${sonar.plugin.version}</version>
             </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <version>${checkstyle-plugin.version}</version>
+                <configuration>
+                    <configLocation>google_checks.xml</configLocation>
+                    <consoleOutput>true</consoleOutput>
+                    <failsOnError>false</failsOnError>
+                    <violationSeverity>warning</violationSeverity>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>com.github.spotbugs</groupId>
+                <artifactId>spotbugs-maven-plugin</artifactId>
+                <version>${spotbugs-plugin.version}</version>
+                <configuration>
+                    <effort>Max</effort>
+                    <threshold>Low</threshold>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.owasp</groupId>
+                <artifactId>dependency-check-maven</artifactId>
+                <version>${owasp-plugin.version}</version>
+                <configuration>
+                    <failBuildOnCVSS>7</failBuildOnCVSS>
+                    <skipTestScope>true</skipTestScope>
+                </configuration>
+            </plugin>
+
 		</plugins>
 	</build>
 

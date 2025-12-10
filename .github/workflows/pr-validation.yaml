@@ -9,6 +9,13 @@ on:
       - synchronize
       - reopened
 
+permissions:
+  contents: read
+  issues: write
+  pull-requests: write
+  checks: write
+  statuses: write
+
 env:
   JAVA_VERSION: 21
   MAVEN_OPTS: -Xmx2048m

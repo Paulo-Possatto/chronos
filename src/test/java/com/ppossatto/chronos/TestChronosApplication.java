@@ -1,5 +1,6 @@
 package com.ppossatto.chronos;
 
+import com.ppossatto.chronos.config.TestcontainersConfiguration;
 import org.springframework.boot.SpringApplication;
 
 public class TestChronosApplication {

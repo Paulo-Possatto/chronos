@@ -5,11 +5,11 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: validate
     show-sql: false
 
   flyway:
-    enabled: false
+    enabled: true
 
 logging:
   level:

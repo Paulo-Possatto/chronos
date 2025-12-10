@@ -55,7 +55,8 @@
         <cyclone-dx.version>2.9.1</cyclone-dx.version>
         <springdoc.version>2.8.14</springdoc.version>
 
-        <jacoco.coverage.minimum>0.80</jacoco.coverage.minimum>
+        <jacoco.coverage.bundle.minimum>0.85</jacoco.coverage.bundle.minimum>
+        <jacoco.coverage.class.minimum>0.65</jacoco.coverage.class.minimum>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -302,22 +303,27 @@
                                         <limit>
                                             <counter>LINE</counter>
                                             <value>COVEREDRATIO</value>
-                                            <minimum>${jacoco.coverage.minimum}</minimum>
+                                            <minimum>${jacoco.coverage.bundle.minimum}</minimum>
                                         </limit>
                                         <limit>
                                             <counter>BRANCH</counter>
                                             <value>COVEREDRATIO</value>
-                                            <minimum>${jacoco.coverage.minimum}</minimum>
+                                            <minimum>${jacoco.coverage.bundle.minimum}</minimum>
                                         </limit>
                                     </limits>
                                 </rule>
                                 <rule>
-                                    <element>PACKAGE</element>
+                                    <element>CLASS</element>
                                     <limits>
                                         <limit>
                                             <counter>LINE</counter>
                                             <value>COVEREDRATIO</value>
-                                            <minimum>0.60</minimum>
+                                            <minimum>${jacoco.coverage.class.minimum}</minimum>
+                                        </limit>
+                                        <limit>
+                                            <counter>BRANCH</counter>
+                                            <value>COVEREDRATIO</value>
+                                            <minimum>${jacoco.coverage.class.minimum}</minimum>
                                         </limit>
                                     </limits>
                                 </rule>
@@ -327,11 +333,12 @@
                 </executions>
                 <configuration>
                     <excludes>
-                        <exclude>**/config/**</exclude>
-                        <exclude>**/dto/**</exclude>
+                        <exclude>com/ppossatto/chronos/config/**</exclude>
+                        <exclude>com/ppossatto/chronos/dto/**</exclude>
                         <exclude>**/mapper/**Impl.class</exclude>
-                        <exclude>**/*Application.class</exclude>
-                        <exclude>**/exception/**</exclude>
+                        <exclude>**/mapper/**Impl$*.class</exclude>
+                        <exclude>com/ppossatto/chronos/*Application.class</exclude>
+                        <exclude>com/ppossatto/chronos/exception/**</exclude>
                     </excludes>
                 </configuration>
             </plugin>

@@ -1,10 +1,10 @@
 CREATE TABLE appointments (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    title VARCHAR(255) NOT NULL,
+    title VARCHAR(100) NOT NULL,
     description TEXT NOT NULL,
     date_time TIMESTAMP WITH TIME ZONE NOT NULL,
     duration INTEGER NOT NULL CHECK (duration > 0),
-    location VARCHAR(500) NOT NULL,
+    location VARCHAR(255) NOT NULL,
     status VARCHAR(50) NOT NULL DEFAULT 'CREATED',
 
     applicant_id UUID NOT NULL,

@@ -128,7 +128,8 @@ jobs:
             -Dsonar.projectKey=Paulo-Possatto_chronos \
             -Dsonar.organization=ppossatto \
             -Dsonar.host.url=https://sonarcloud.io \
-            -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml
+            -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml \
+            -Dsonar.java.binaries=target/classes
 
       - name: Check Quality Gate
         uses: sonarsource/sonarqube-quality-gate-action@master

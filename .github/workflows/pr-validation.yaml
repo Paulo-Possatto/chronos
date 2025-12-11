@@ -72,12 +72,14 @@ jobs:
           name: codecov-chronos
           fail_ci_if_error: false
 
-      - name: Upload JaCoCo Coverage Report
+      - name: Upload Artifacts for SonarCloud
         uses: actions/upload-artifact@v4
         with:
-          name: jacoco-report
-          path: target/site/jacoco/
-          retention-days: 7
+          name: build-artifacts
+          path: |
+            target/classes/
+            target/site/jacoco/
+          retention-days: 1
 
       - name: Comment Coverage on PR
         if: github.event_name == 'pull_request'
@@ -104,32 +106,23 @@ jobs:
         with:
           java-version: ${{ env.JAVA_VERSION }}
           distribution: 'temurin'
-          cache: 'maven'
 
-      - name: Cache SonarCloud packages
-        uses: actions/cache@v4
-        with:
-          path: ~/.sonar/cache
-          key: ${{ runner.os }}-sonar
-          restore-keys: ${{ runner.os }}-sonar
-
-      - name: Download JaCoCo report
+      - name: Download Build Artifacts
         uses: actions/download-artifact@v4
         with:
-          name: jacoco-report
-          path: target/site/jacoco/
+          name: build-artifacts
+          path: target/
 
       - name: SonarCloud Scan
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: |
-          mvn sonar:sonar \
+          mvn org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
             -Dsonar.projectKey=Paulo-Possatto_chronos \
             -Dsonar.organization=ppossatto \
             -Dsonar.host.url=https://sonarcloud.io \
-            -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml \
-            -Dsonar.java.binaries=target/classes
+            -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml
 
       - name: Check Quality Gate
         uses: sonarsource/sonarqube-quality-gate-action@master

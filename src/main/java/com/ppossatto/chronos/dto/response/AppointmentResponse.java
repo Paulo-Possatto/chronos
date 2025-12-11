@@ -22,7 +22,7 @@ import lombok.Builder;
    description = "Response object with the appointment details.",
    example = """
       {
-         "appointmentId": "00000000-0000-0000-0000-000000000000",
+         "appointmentId": "5de38331-9f47-4c38-bf9e-f88f9ef1929d",
          "appointmentTitle": "Customer Appointment",
          "appointmentDescription": "Customer appointment description",
          "appointmentStartDateTime": "2025-12-06 15:30:00",
@@ -38,7 +38,7 @@ import lombok.Builder;
 public record AppointmentResponse(
    @Schema(
       description = "Unique appointment ID",
-      example = "00000000-0000-0000-0000-000000000000"
+      example = "5de38331-9f47-4c38-bf9e-f88f9ef1929d"
    )
    String appointmentId,
    @Schema(

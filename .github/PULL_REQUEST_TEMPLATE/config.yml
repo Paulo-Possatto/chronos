@@ -1,0 +1,15 @@
+blank_issues_enabled: false
+
+pull_request_template:
+
+  - name: "Default template"
+    description: "Default PR template for general purpose"
+    file: "default.md"
+
+  - name: "Feature template"
+    description: "PR template for feature creation"
+    file: "feature.md"
+
+  - name: "Bugfix template"
+    description: "PR template for a bugfix"
+    file: "bug-fix.md"

@@ -3,9 +3,11 @@ services:
     image: postgres:16.11-alpine3.23
     container_name: chronos-db
     restart: unless-stopped
+    env_file:
+      - .env
     environment:
-      POSTGRES_USER: dev_user
-      POSTGRES_PASSWORD: dev_pass
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASS}
       POSTGRES_DB: appointments
     volumes:
       - postgres_data:/var/lib/postgresql/data
